@@ -5,8 +5,9 @@
   "main": "webpack.config.js",
   "author": "Sandip Bardiya <baradiya.sandip@gmail.com>",
   "scripts": {
-    "dev": "webpack -d --watch",
-    "build" : "webpack -p"
+    "dev": "node server.js | npm run watch",
+    "build" : "gulp build | webpack",
+    "watch" : "gulp | webpack --watch"
   },
   "license": "ISC",
   "devDependencies": {

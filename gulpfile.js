@@ -22,5 +22,5 @@ gulp.task('build', function() {
 
 
 gulp.task('default', ['build'] , function () {
-	gulp.watch(['./pcss/*.pcss'],['build']);
+	gulp.watch(['./app/pcss/*.pcss'],['build']);
 	});

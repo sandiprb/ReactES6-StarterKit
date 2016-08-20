@@ -8,4 +8,9 @@ class Hero extends React.Component {
 	}
 }
 
+Hero.defaultProps ={
+	text: 'React.',
+	className: 'hero'
+};
+
 module.exports = Hero;

@@ -1,22 +1,25 @@
 var webpack = require('webpack');
 var path = require('path');
+var ManifestPlugin = require('webpack-manifest-plugin');
+var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 
 var debug = process.env.NODE_ENV !== "production";
 
-const APP_DIR = path.join(__dirname, './app/js');
-const BUILD_DIR = path.join(__dirname, './app/static/js');
-
+const APP_DIR = path.join(__dirname, './app');
+const STATIC_DIR = path.join(__dirname, './app/static');
+GLOBAL.window.manifest = '[name].[chunkhash].js';
 
 module.exports = {
   context: __dirname,
   
   devtool: debug ? "inline-sourcemap" : null,
   
-  entry: APP_DIR + "/index.jsx",
+  entry: STATIC_DIR + "/js/index.jsx",
 
   output: {
-    path: BUILD_DIR,
-    filename: "app.js"
+    path: STATIC_DIR + "/build",
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js'
   },
 
   module:{
@@ -24,13 +27,19 @@ module.exports = {
     {
       test: /\.jsx$/,
       exclude: /node_modules/,
-      loader: 'babel',
-    },
-
+      loader: 'babel'
+    }
     ]
   },
 
-  plugins: debug ? [] : [
+  plugins: debug ? [
+  new ManifestPlugin(),
+  new ChunkManifestPlugin({
+    filename: "chunk-manifest.json",
+    manifestVariable: "webpackManifest"
+  }),
+  ] : [
+  new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),

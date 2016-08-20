@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
         "browser": true,
+        "node": true,
         "commonjs": true,
         "es6": true
     },
@@ -13,24 +14,18 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+    "react"
     ],
     "rules": {
-        "indent": [
-            "warning",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+        "indent": [ "error", "tab"],
+        "linebreak-style": ["error","unix"],
+        "quotes": ["warn","single"],
+        "semi": ["error","always"],
+        "max-len": [1, 80, 4, {
+          ignoreComments: true,
+          ignoreUrls: true
+      }],
+      "no-console": "off"
+
+  }
 };

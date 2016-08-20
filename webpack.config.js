@@ -7,7 +7,6 @@ var debug = process.env.NODE_ENV !== "production";
 
 const APP_DIR = path.join(__dirname, './app');
 const STATIC_DIR = path.join(__dirname, './app/static');
-GLOBAL.window.manifest = '[name].[chunkhash].js';
 
 module.exports = {
   context: __dirname,
@@ -17,7 +16,7 @@ module.exports = {
   entry: STATIC_DIR + "/js/index.jsx",
 
   output: {
-    path: STATIC_DIR + "/build",
+    path: STATIC_DIR + "/build/js",
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js'
   },

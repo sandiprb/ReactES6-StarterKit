@@ -5,7 +5,7 @@
 - Bable ES6 Preset
 - Styling with [Post Css](https://github.com/postcss/postcss)
 - Linting with eslint
-- express.js for server (To do : move to [wepack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html))
+- wepack-dev-server
 
 <br/>
 

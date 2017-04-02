@@ -6,8 +6,7 @@
 - Styling with [Post Css](https://github.com/postcss/postcss)
 - Linting with eslint
 - wepack-dev-server (Autoreload on save)
-
-<br/>
+sd
 
 ```
 git clone git@github.com:sandiprb/ReactES6-workspace.git
@@ -23,7 +22,11 @@ Install dependencies
 
  
  <br/>
+Build CSS 
+
+    gulp css
  
 Watch 
 
-    npm,skdjs run watch
+    npm run watch
+

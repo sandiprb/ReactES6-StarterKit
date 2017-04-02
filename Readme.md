@@ -15,10 +15,3 @@ gulp css
 npm run dev
 ```
 Files served at localhost:8080/app
-
-<br/>
-<br/>
-Watch 
-```
-npm run watch
-```

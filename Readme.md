@@ -7,8 +7,6 @@
 - Linting with eslint
 - wepack-dev-server (Autoreload on save)
 
-<br/>
-
 ```
 git clone git@github.com:sandiprb/ReactES6-workspace.git
 ```
@@ -17,13 +15,14 @@ git clone git@github.com:sandiprb/ReactES6-workspace.git
 Install dependencies
  
 
-    cd ReactES6-workspace 
-    npm run build
+    cd ReactES6-workspace
+    yarn 
+    gulp css
     npm run dev
 
  
  <br/>
- 
 Watch 
 
-    npm,skdjs run watch
+    npm run watch
+

@@ -8,21 +8,17 @@
 - wepack-dev-server (Autoreload on save)
 
 ```
-git clone git@github.com:sandiprb/ReactES6-workspace.git
+git clone git@github.com:sandiprb/ReactES6-workspace.git react
+cd react
+yarn 
+gulp css
+npm run dev
 ```
- <br/>
+Files served at localhost:8080/app
 
-Install dependencies
- 
-
-    cd ReactES6-workspace
-    yarn 
-    gulp css
-    npm run dev
-
- 
- <br/>
+<br/>
+<br/>
 Watch 
-
-    npm run watch
-
+```
+npm run watch
+```
